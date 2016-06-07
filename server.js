@@ -1,10 +1,10 @@
-var path = require('path');
-var webpack = require('webpack');
-var express = require('express');
-var config = require('./webpack.config');
+const path = require('path');
+const webpack = require('webpack');
+const express = require('express');
+const config = process.env.NODE_ENV !== 'production' ? require('./webpack.config') : require('./webpack.production');
 
-var app = express();
-var compiler = webpack(config);
+const app = express();
+const compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
@@ -17,11 +17,7 @@ app.use(require('webpack-hot-middleware')(compiler));
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
-  
-app.listen(3000, 'localhost', function (err, result) {
-  if (err) {
-    console.log(err);
-  }
 
-  console.log('Listening at localhost:3000');
-});
+const port = process.env.PORT || 3000;
+app.listen(port);
+console.log(`Listening at http://localhost:${port}`);

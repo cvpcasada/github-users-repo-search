@@ -2,7 +2,8 @@
   "name": "gmaps-reduxed",
   "version": "0.1.0",
   "scripts": {
-    "start": "DEBUG=true node server.js",
+    "start": "node server.js",
+    "start-dev": "DEBUG=true node server.js",
     "build": "webpack -p --config webpack.production.js",
     "postinstall": "webpack --config ./webpack.production.js --progress --colors",
     "build-dev": "webpack -p"
