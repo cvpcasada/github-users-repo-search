@@ -1,8 +1,16 @@
-export const DATA_FETCHED = 'DATA_FETCHED';
-export const DATA_SUCCEEDED = 'DATA_SUCCEEDED';
-export const DATA_FAILED = 'DATA_FAILED';
-export const SUGGEST_ACTIVATED = 'SUGGEST_ACTIVATED';
-export const SUGGEST_INPUT_CHANGED = 'SUGGEST_INPUT_CHANGED';
-export const SELECT_SUGGESTED = 'SELECT_SUGGESTED';
-export const REQUEST_SUGGESTED_PLACES = 'RETRIEVE_SUGGESTED_PLACES';
-export const RECEIVE_SUGGESTED_PLACES = 'RECEIVE_SUGGESTED_PLACES';
+import {Enum} from 'enumify';
+
+const _actionTypes = [
+  'USERS_LIST_REQUEST',
+  'USERS_LIST_SUCCESS',
+  'USERS_LIST_FAILURE',
+  'REPO_REQUEST',
+  'REPO_SUCCESS',
+  'REPO_FAILURE'
+
+];
+
+class ActionTypes extends Enum {}
+
+ActionTypes.initEnum(_actionTypes);
+export default ActionTypes;

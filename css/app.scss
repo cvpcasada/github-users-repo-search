@@ -1,3 +1,14 @@
 .thumbnail {
-  margin: 1rem !important;
+  width: 26rem;
+  height: 30rem;
+  float: left;
+  margin: 1rem;
+}
+
+.list {
+  display: block;
+}
+
+.caption {
+  word-break: break-word;
 }

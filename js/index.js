@@ -1,8 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './containers/App';
+import 'babel-polyfill'
+import React from 'react'
+import { render } from 'react-dom'
+import { browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+import Root from './containers/Root'
+import configureStore from './store/configureStore'
 
-import 'bootstrap/dist/css/bootstrap.css';
-import '../css/global.scss'
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 
-ReactDOM.render(<App />, document.getElementById('main'));
+render(
+  <Root store={store} history={history} />,
+  document.getElementById('root')
+);
