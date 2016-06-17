@@ -1,5 +1,5 @@
 
-# gmaps-reduxed (gmaps-reduxed)
+# Github user repo search (github-users-repo-search)
 
 > A simple react-redux app with google maps integration
 
